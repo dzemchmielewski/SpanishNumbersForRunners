@@ -9,11 +9,12 @@ import java.util.Random;
 
 public class TheTime {
 
-  public TheTime() {
-  }
+    Random random = new Random();
+
+    public TheTime() {
+    }
 
   public Time randomTime(Configuration.Accuracy accuracy) {
-      Random random = new Random();
       Time time = new Time();
       time.setHour(random.nextInt(11) + 1);
       time.setAmpm(random.nextInt(2) == 0 ? AmPm.AM : AmPm.PM);
@@ -35,6 +36,7 @@ public class TheTime {
     public List<String> soundList(Time time, Configuration.Lang lang, Configuration.AnswerMethod answerMethod) {
         List<String> result = new ArrayList<>();
         String ln = lang.getCode();
+        result.add("bump");
 
         if (answerMethod == Configuration.AnswerMethod.TRIVIAL) {
             result.add(ln + "_numeral_" + String.valueOf(time.getHour()));
@@ -53,13 +55,11 @@ public class TheTime {
                         result.add(ln + "_pol_do");
                         result.add(ln + "_dopelniacz_" + incomingHour);
                     } else if (time.getMinute() == 15) {
-                        result.add(ln + "_kwadrans");
-                        result.add(ln + "_po");
+                        result.add(ln + "_kwadrans_po");
                         result.add(ln + "_dopelniacz_" + String.valueOf(time.getHour()));
                     } else if (time.getMinute() == 45) {
-                        result.add(ln + "_kwadrans");
-                        result.add(ln + "_do");
-                        result.add(ln + "_dopelniacz_" + incomingHour);
+                        result.add(ln + "_za_kwadrans");
+                        result.add(ln + "_numeral_" + incomingHour);
                     } else { //if (time.getMinute() % 5 == 0) {
                         if (time.getMinute() < 30) {
                             result.addAll(minutesToSounds(lang, time.getMinute()));
@@ -144,7 +144,7 @@ public class TheTime {
         String ln = "es";
         if (hour == 1) {
             result.add(ln + "_es_la");
-            result.add(ln + "_1");
+            result.add(ln + "_una");
         } else {
             result.add(ln + "_son_las");
             result.add(ln + "_" + String.valueOf(hour));

@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Date;
 import java.util.List;
 
 import dzem.pl.spanishtime.core.Configuration;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final TextView welcome = findViewById(R.id.welcome_id);
-        welcome.setText(welcome.getText() + " " + new Date().toString());
+        //welcome.setText(welcome.getText() + " " + new Date().toString());
 
         this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 

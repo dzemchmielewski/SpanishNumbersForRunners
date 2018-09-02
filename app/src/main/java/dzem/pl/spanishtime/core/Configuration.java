@@ -2,6 +2,8 @@ package dzem.pl.spanishtime.core;
 
 public class Configuration {
 
+
+
   public enum Accuracy {
     MINUTES_15, MINUTES_10, MINUTES_5, MINUTES_1;
   }
@@ -11,7 +13,7 @@ public class Configuration {
   }
 
   public enum Lang {
-    PL("pl", "polski"), ES("es", "espańol");
+    PL("pl", "polski"), ES("es", "espanol");
     String code;
     String name;
 
@@ -35,7 +37,7 @@ public class Configuration {
   private Lang secondLang = Lang.ES;
 
   private int waitBeforeAnswer = 2 * 1000; //miliseconds
-  private int waitBeforeNextQuestion = 5 * 1000; //miliseconds
+  private int waitBeforeNextQuestion = 2 * 1000; //miliseconds
 
   public Accuracy getAccuracy() {
     return accuracy;

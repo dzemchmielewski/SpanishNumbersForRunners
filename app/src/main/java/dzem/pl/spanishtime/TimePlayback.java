@@ -46,6 +46,7 @@ public class TimePlayback {
         soundPool = new SoundPool.Builder()
                 .setAudioAttributes(attributes)
                 .build();
+        sounds.put("bump", new Sound(R.raw.bump));
 
         sounds.put("pl_1", new Sound(R.raw.pl_1));
         sounds.put("pl_2", new Sound(R.raw.pl_2));
@@ -74,6 +75,19 @@ public class TimePlayback {
         sounds.put("pl_70", new Sound(R.raw.pl_70));
         sounds.put("pl_80", new Sound(R.raw.pl_80));
         sounds.put("pl_90", new Sound(R.raw.pl_90));
+
+        sounds.put("pl_100", new Sound(R.raw.pl_100));
+        sounds.put("pl_200", new Sound(R.raw.pl_200));
+        sounds.put("pl_300", new Sound(R.raw.pl_300));
+        sounds.put("pl_400", new Sound(R.raw.pl_400));
+        sounds.put("pl_500", new Sound(R.raw.pl_500));
+        sounds.put("pl_600", new Sound(R.raw.pl_600));
+        sounds.put("pl_700", new Sound(R.raw.pl_700));
+        sounds.put("pl_800", new Sound(R.raw.pl_800));
+        sounds.put("pl_900", new Sound(R.raw.pl_900));
+        sounds.put("pl_1000", new Sound(R.raw.pl_1000));
+        sounds.put("pl_1000000", new Sound(R.raw.pl_1000000));
+
         sounds.put("pl_numeral_1", new Sound(R.raw.pl_numeral_1));
         sounds.put("pl_numeral_2", new Sound(R.raw.pl_numeral_2));
         sounds.put("pl_numeral_3", new Sound(R.raw.pl_numeral_3));
@@ -100,54 +114,68 @@ public class TimePlayback {
         sounds.put("pl_dopelniacz_12", new Sound(R.raw.pl_dopelniacz_12));
         sounds.put("pl_pol_do", new Sound(R.raw.pl_pol_do));
         sounds.put("pl_za", new Sound(R.raw.pl_za));
-        sounds.put("pl_do", new Sound(R.raw.pl_do));
         sounds.put("pl_po", new Sound(R.raw.pl_po));
         sounds.put("pl_kwadrans", new Sound(R.raw.pl_kwadrans));
+        sounds.put("pl_za_kwadrans", new Sound(R.raw.pl_za_kwadrans));
+        sounds.put("pl_kwadrans_po", new Sound(R.raw.pl_kwadrans_po));
 
 
-        sounds.put("es_1", new Sound(R.raw.es_bump));
-        sounds.put("es_2", new Sound(R.raw.es_bump));
-        sounds.put("es_3", new Sound(R.raw.es_bump));
-        sounds.put("es_4", new Sound(R.raw.es_bump));
-        sounds.put("es_5", new Sound(R.raw.es_bump));
-        sounds.put("es_6", new Sound(R.raw.es_bump));
-        sounds.put("es_7", new Sound(R.raw.es_bump));
-        sounds.put("es_8", new Sound(R.raw.es_bump));
-        sounds.put("es_9", new Sound(R.raw.es_bump));
-        sounds.put("es_10",new Sound(R.raw.es_bump));
-        sounds.put("es_11",new Sound(R.raw.es_bump));
-        sounds.put("es_12",new Sound(R.raw.es_bump));
-        sounds.put("es_13",new Sound(R.raw.es_bump));
-        sounds.put("es_14",new Sound(R.raw.es_bump));
-        sounds.put("es_15",new Sound(R.raw.es_bump));
-        sounds.put("es_16",new Sound(R.raw.es_bump));
-        sounds.put("es_17",new Sound(R.raw.es_bump));
-        sounds.put("es_18",new Sound(R.raw.es_bump));
-        sounds.put("es_19",new Sound(R.raw.es_bump));
-        sounds.put("es_20",new Sound(R.raw.es_bump));
-        sounds.put("es_21",new Sound(R.raw.es_bump));
-        sounds.put("es_22",new Sound(R.raw.es_bump));
-        sounds.put("es_23",new Sound(R.raw.es_bump));
-        sounds.put("es_24",new Sound(R.raw.es_bump));
-        sounds.put("es_25",new Sound(R.raw.es_bump));
-        sounds.put("es_26",new Sound(R.raw.es_bump));
-        sounds.put("es_27",new Sound(R.raw.es_bump));
-        sounds.put("es_28",new Sound(R.raw.es_bump));
-        sounds.put("es_29",new Sound(R.raw.es_bump));
-        sounds.put("es_30",new Sound(R.raw.es_bump));
-        sounds.put("es_40",new Sound(R.raw.es_bump));
-        sounds.put("es_50",new Sound(R.raw.es_bump));
-        sounds.put("es_60",new Sound(R.raw.es_bump));
-        sounds.put("es_70",new Sound(R.raw.es_bump));
-        sounds.put("es_80",new Sound(R.raw.es_bump));
-        sounds.put("es_90",new Sound(R.raw.es_bump));
+        sounds.put("es_una", new Sound(R.raw.es_una));
+        sounds.put("es_1", new Sound(R.raw.es_1));
+        sounds.put("es_2", new Sound(R.raw.es_2));
+        sounds.put("es_3", new Sound(R.raw.es_3));
+        sounds.put("es_4", new Sound(R.raw.es_4));
+        sounds.put("es_5", new Sound(R.raw.es_5));
+        sounds.put("es_6", new Sound(R.raw.es_6));
+        sounds.put("es_7", new Sound(R.raw.es_7));
+        sounds.put("es_8", new Sound(R.raw.es_8));
+        sounds.put("es_9", new Sound(R.raw.es_9));
+        sounds.put("es_10",new Sound(R.raw.es_10));
+        sounds.put("es_11",new Sound(R.raw.es_11));
+        sounds.put("es_12",new Sound(R.raw.es_12));
+        sounds.put("es_13",new Sound(R.raw.es_13));
+        sounds.put("es_14",new Sound(R.raw.es_14));
+        sounds.put("es_15",new Sound(R.raw.es_15));
+        sounds.put("es_16",new Sound(R.raw.es_16));
+        sounds.put("es_17",new Sound(R.raw.es_17));
+        sounds.put("es_18",new Sound(R.raw.es_18));
+        sounds.put("es_19",new Sound(R.raw.es_19));
+        sounds.put("es_20",new Sound(R.raw.es_20));
+        sounds.put("es_21",new Sound(R.raw.es_21));
+        sounds.put("es_22",new Sound(R.raw.es_22));
+        sounds.put("es_23",new Sound(R.raw.es_23));
+        sounds.put("es_24",new Sound(R.raw.es_24));
+        sounds.put("es_25",new Sound(R.raw.es_25));
+        sounds.put("es_26",new Sound(R.raw.es_26));
+        sounds.put("es_27",new Sound(R.raw.es_27));
+        sounds.put("es_28",new Sound(R.raw.es_28));
+        sounds.put("es_29",new Sound(R.raw.es_29));
+        sounds.put("es_30",new Sound(R.raw.es_30));
+        sounds.put("es_40",new Sound(R.raw.es_40));
+        sounds.put("es_50",new Sound(R.raw.es_50));
+        sounds.put("es_60",new Sound(R.raw.es_60));
+        sounds.put("es_70",new Sound(R.raw.es_70));
+        sounds.put("es_80",new Sound(R.raw.es_80));
+        sounds.put("es_90",new Sound(R.raw.es_90));
+        sounds.put("es_100",new Sound(R.raw.es_100));
+        sounds.put("es_100to",new Sound(R.raw.es_100to));
+        sounds.put("es_200",new Sound(R.raw.es_200));
+        sounds.put("es_300",new Sound(R.raw.es_300));
+        sounds.put("es_400",new Sound(R.raw.es_400));
+        sounds.put("es_500",new Sound(R.raw.es_500));
+        sounds.put("es_600",new Sound(R.raw.es_600));
+        sounds.put("es_700",new Sound(R.raw.es_700));
+        sounds.put("es_800",new Sound(R.raw.es_800));
+        sounds.put("es_900",new Sound(R.raw.es_900));
+        sounds.put("es_1000",new Sound(R.raw.es_1000));
+        sounds.put("es_1000000",new Sound(R.raw.es_1000000));
 
-        sounds.put("es_es_la",new Sound(R.raw.es_bump));
-        sounds.put("es_son_las",new Sound(R.raw.es_bump));
-        sounds.put("es_y",new Sound(R.raw.es_bump));
-        sounds.put("es_menos",new Sound(R.raw.es_bump));
-        sounds.put("es_media",new Sound(R.raw.es_bump));
-        sounds.put("es_cuarto",new Sound(R.raw.es_bump));
+        sounds.put("es_es_la",new Sound(R.raw.es_es_la));
+        sounds.put("es_son_las",new Sound(R.raw.es_son_las));
+        sounds.put("es_y",new Sound(R.raw.es_y));
+        sounds.put("es_menos",new Sound(R.raw.es_menos));
+        sounds.put("es_media",new Sound(R.raw.es_media));
+        sounds.put("es_cuarto",new Sound(R.raw.es_cuarto));
 
 
     }
